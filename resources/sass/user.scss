@@ -1,0 +1,88 @@
+//html {
+//    --lh: 1.4rem;
+//    line-height: var(--lh);
+//}
+
+/* Product card (on homepage) */
+.product.card {
+    .card-title {
+        font-weight: bold;
+    }
+    a {
+        text-decoration: none;
+    }
+
+    a img {
+        transition: transform .2s; /* Animation */
+    }
+
+    a:hover img {
+        transform: scale(1.1);
+    }
+}
+
+/* Product details page */
+.product-content-wrapper {
+    .price strong {
+        font-size: 2rem;
+        color: red;
+    }
+}
+
+.product-details-wrapper > div {
+    margin: 2rem auto;
+}
+
+table {
+    &.with-id-col {
+        tr th:first-child {
+            width: 1%;
+        }
+    }
+
+    &.with-action-col {
+        tr td:last-child {
+            white-space: nowrap;
+            width: 1px;
+        }
+    }
+
+    .ellipsis {
+        //--max-lines: 3;
+        //max-height: calc(var(--lh) * var(--max-lines));
+        overflow: hidden;
+        max-width: 30rem;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}
+
+
+.callout {
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid #eee;
+    border-left-width: 5px;
+    border-radius: 3px;
+    h4 {
+        margin-top: 0;
+        margin-bottom: 5px;
+    }
+    p:last-child {
+        margin-bottom: 0;
+    }
+    code {
+        border-radius: 3px;
+    }
+    & + .bs-callout {
+        margin-top: -5px;
+    }
+}
+@each $name,$color in (default,#777),(primary,#428bca),(success,#5cb85c),(danger,#d9534f),(warning,#f0ad4e),(info,#5bc0de), (bdc,#29527a) {
+    .callout-#{$name} {
+        border-left-color: $color;
+        h4 {
+            color: $color;
+        }
+    }
+}
